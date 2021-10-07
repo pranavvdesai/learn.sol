@@ -37,7 +37,20 @@ contract map{
     function exotic_array_mapping() public {
         balances[msg.sender].push(1);
         
-        // access
-        balances[msg.sender][0];
+       
     }
+    function access_array_mapping() public view {
+         // access
+        balances[msg.sender][0];
+        
+       
+    }
+    
+    mapping(address => mapping(uint => Book)) public myMapping;
+    
+        function addMyBook(uint _id, uint _title, string memory _author) public {
+         myMapping[msg.sender][_id] = Book(_title,_author);
+       
+    }
+    
 }
